@@ -18,7 +18,7 @@ if(isset($_POST['save'])){
             $query="INSERT into user (firstName,lastName,userName,userPassword,userRole) values('{$firstName}','$lastName','$userName','$userPassword','$userRole')";
             $result=mysqli_query($conn,$query);
             if($result){
-                header("location:http://localhost/new/admin/users.php");
+                header("location:http://localhost/new/admin/user.php");
             }
 
         }else{

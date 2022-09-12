@@ -1,3 +1,10 @@
+<?php
+include("../mySqlConnection.php");
+session_start();
+if(!isset($_SESSION["username"])){
+    header("location:http://localhost/new/admin/post.php");
+}
+?>
 <!doctype html>
 <html>
    <head>
@@ -18,7 +25,7 @@
                         <img class="logo" src="images/news.jpg">
                         <h3 class="heading">Admin</h3>
                         <!-- Form Start -->
-                        <form  action="" method ="POST">
+                        <form  action="<?php $_PHP_SELF?>" method ="POST">
                             <div class="form-group">
                                 <label>Username</label>
                                 <input type="text" name="username" class="form-control" placeholder="" required>
@@ -29,6 +36,28 @@
                             </div>
                             <input type="submit" name="login" class="btn btn-primary" value="login" />
                         </form>
+                        <?php
+                        include("../mySqlConnection.php");
+                        if(isset($_POST['login'])){
+                            $userName=$_POST['username'];
+                            $userPassword=md5($_POST['password']);
+                            
+
+                            $query="select userID,userName, userRole from user where userName='$userName' and userPassword='$userPassword'";
+                            // echo $query; exit;
+                            $result=mysqli_query($conn,$query);
+                            if(mysqli_num_rows($result)>0){
+                           
+                                while($row=mysqli_fetch_assoc($result)){
+                                    $_SESSION["username"]=$row['userName'];
+                                    $_SESSION["userID"]=$row['userID'];
+                                    $_SESSION["userRole"]=$row['userRole'];
+                                    header("location:http://localhost/new/admin/post.php");
+
+                                }
+                            }
+                        }
+                        ?>
                         <!-- /Form  End -->
                     </div>
                 </div>

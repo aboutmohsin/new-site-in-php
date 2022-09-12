@@ -22,7 +22,7 @@ if(isset($_POST['update'])){
 //     echo 'here1';
     $sql="UPDATE user SET firstName='$firstName', lastName='$lastName',userName='$userName',userRole='$userRole' where userID='$userID'";  
     $checkResult=mysqli_query($conn,$sql);
-     header("location:http://localhost/new/admin/users.php");
+     header("location:http://localhost/new/admin/user.php");
 //      exit;
 //    }
       

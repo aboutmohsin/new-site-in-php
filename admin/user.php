@@ -1,6 +1,9 @@
 <?php include "header.php";
  include("../mySqlConnection.php");
+ if($_SESSION["userRole"]==0){
 
+    header("location:http://localhost/new/admin/post.php");
+}
 ?>
   <div id="admin-content">
       <div class="container">

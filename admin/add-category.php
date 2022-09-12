@@ -1,5 +1,6 @@
 <?php include "header.php";
 include("../mySqlConnection.php");
+
 if(isset($_POST['save'])){
     $categoryName=$_POST['cat'];
     $query="SELECT * from category where categoryName='$categoryName'";
