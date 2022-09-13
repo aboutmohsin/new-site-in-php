@@ -19,6 +19,7 @@ if($_SESSION["userRole"]==0){
             <div class="col-md-12">
             <?php 
              $limit=3; 
+
              $page=$_GET['pageNumber'];
              if(isset($_GET['pageNumber'])){
                  $_GET['pageNumber'];
@@ -27,7 +28,7 @@ if($_SESSION["userRole"]==0){
                  $page=1;
              }
              // echo $page; exit;
-             $offset=($page-1)*$limit;
+            $offset=($page-1)*$limit;
             $query1="SELECT * from category order by categoryID desc limit $offset, $limit";
             $result=mysqli_query($conn,$query1) or die("Query is not running...");
             if(mysqli_num_rows($result)>0)
@@ -74,6 +75,8 @@ if($_SESSION["userRole"]==0){
                            echo '<li><a herf="users.php?page='.($page-1).'>">Prev</a></li>';
                             
                         }
+                       ?>
+                       <?php
                     for($i=1;$i<=$totalPage;$i++){
                         if($i==$page){
                             $active="active";
@@ -81,18 +84,19 @@ if($_SESSION["userRole"]==0){
                         else{
                             $active="";
                         }
-                       echo ' <li class="<?php $active ?>"><a herf="users.php?pageNumber="'.$i.'>'.$i.'</a></li>';
+                       echo "<li class='<?php $active ?>'><a herf='users.php?pageNumber='.$i.'>$i</a></li>";
                   
                     }
                  
                    
                       if($totalPage >$page){
-                            echo '<li><a herf="users.php?page='.($page + 1).'>">Next</a></li>';       
+                            echo '<li><a herf="users.php?pageNumber='.($page + 1).'>">Next</a></li>';       
                         }
                     echo '</ul>';
                  
                  }
                 ?>
+                
                 <!-- <ul class='pagination admin-pagination'>
                     <li class="active"><a>1</a></li>
                     <li><a>2</a></li>

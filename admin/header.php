@@ -26,14 +26,14 @@ if(!isset( $_SESSION["username"])){
             <!-- container -->
             <div class="container">
                 <!-- row -->
-                <div class="row">
+                <div class="row ">
                     <!-- LOGO -->
                     <div class="col-md-2">
                         <a href="post.php"><img class="logo" src="images/news.jpg"></a>
                     </div>
                     <!-- /LOGO -->
                       <!-- LOGO-Out -->
-                    <div class="col-md-offset-9  col-md-3">
+                    <div class="col-md-offset-7  col-md-3">
                         <a href="logout.php" class="admin-logout" style="text-decoration: none;">Hello <?php echo $_SESSION["username"];?> logout</a>
                     </div>
                     <!-- /LOGO-Out -->

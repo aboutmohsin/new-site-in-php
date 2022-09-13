@@ -56,11 +56,11 @@
                               <td><?php echo $row['firstName'] ." ". $row['lastName'];?></td>
                               <td><?php echo $row['userName'];?></td>
                               <td><?php 
-                              if($row['userRole']==1){
-                                echo "Admin";
+                              if($row['userRole']==0){
+                                echo "Normal";
                               }
                               else{
-                                echo "Normal";
+                                echo "Admin";
                               }
                               ?></td>
                               <td class='edit'><a href='update-user.php?userID=<?php echo $row["userID"]?>'><i class='fa fa-edit'></i></a></td>

@@ -10,7 +10,7 @@ if(isset($_POST['sumbit'])){
         header("location:http://localhost/new/admin/category.php");
     }
 }
-mysqli_close($conn);
+// mysqli_close($conn);
 ?>
   <div id="admin-content">
       <div class="container">

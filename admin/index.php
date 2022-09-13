@@ -1,9 +1,9 @@
 <?php
 include("../mySqlConnection.php");
 session_start();
-if(!isset($_SESSION["username"])){
-    header("location:http://localhost/new/admin/post.php");
-}
+// if(!isset($_SESSION["username"])){
+//     header("location:http://localhost/new/admin/post.php");
+// }
 ?>
 <!doctype html>
 <html>
