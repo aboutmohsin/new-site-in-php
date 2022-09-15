@@ -1,4 +1,4 @@
-<?php include "header.php"; 
+<?php include("header.php");
 include("../mySqlConnection.php");
 if(isset($_POST['sumbit'])){
     $categoryID=mysqli_escape_string($conn,$_POST['cat_id']);

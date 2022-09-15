@@ -1,4 +1,4 @@
-<?php include "header.php"; 
+<?php include("header.php");
 include("../mySqlConnection.php");
 ?>
   <div id="admin-content">
